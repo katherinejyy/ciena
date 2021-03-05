@@ -1,0 +1,37 @@
+---
+- name: "Create L2VPN-VPWS service"
+  hosts: "5170_T2"
+  vars:
+        pws:
+                - pwName: "svc101"
+                  peerIp: "10.0.10.251"
+                  pwid: "1001"
+                  tlabel: "101"
+                  rlabel: "101"
+                  tunnelName: "Ingr-0072_to_0075"
+                  sourceIp: "10.0.30.251"
+                  destinationIp: "10.0.10.251"
+                - pwName: "svc102" 
+                  peerIp: "10.0.10.251"
+                  pwid: "1002"
+                  tlabel: "102"
+                  rlabel: "102"
+                  tunnelName: "Ingr-0072_to_0075"
+                  sourceIp: "10.0.30.251"
+                  destinationIp: "10.0.10.251"
+  #include_vars: var.yml
+  #vars_files:
+  #      - /home/kathy/telesat/var.yml  
+  connection: netconf
+  gather_facts: false
+  tasks:
+          # - include_vars: /home/kathy/telesat/var.yml
+      - name: "Create Pseudowires"
+        netconf_config:
+            content: "{{ lookup('template', 'templates/createPw.j2') }}"           
+        ignore_errors: True
+        #- debug: msg="{{item}}" 
+        
+        #with_items: "{{vars}}"
+        #loop: "{{vars}}"
+

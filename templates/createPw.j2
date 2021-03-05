@@ -1,0 +1,26 @@
+<config>
+  <pseudowires xmlns="urn:ietf:params:xml:ns:yang:ietf-pseudowires">
+  {% for pw in pws %}
+    <pseudowire>
+    <name>{{ pw.pwName }}</name>
+    <mtu>1500</mtu>
+    <cw-negotiation>non-preferred</cw-negotiation>
+      <configured-pw>
+          <peer-ip>{{ pw.peerIp }}</peer-ip>
+          <pw-id>{{ pw.pwid }}</pw-id>
+          <transmit-label>{{ pw.tlabel }}</transmit-label>
+          <receive-label>{{ pw.rlabel }}</receive-label>   
+      </configured-pw>
+      <role xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires" xmlns:cnpw="http://ciena.com/ns/yang/ciena-ietf-pseudowires">cnpw:primary</role>
+      <protect xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">false</protect>
+      <mode xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">spoke</mode>
+      <stats-collection xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">on</stats-collection>
+      <pw-loadbalance xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">disabled</pw-loadbalance>
+      <tunnel-type xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">static-ingress-corouted</tunnel-type>
+      <tunnel-name xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">{{ pw.tunnelName }}</tunnel-name>
+      <tunnel-source-ip xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">{{ pw.sourceIp }}</tunnel-source-ip>
+      <tunnel-destination-ip xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">{{ pw.destinationIp }}</tunnel-destination-ip>
+    </pseudowire>
+  {% endfor %}
+  </pseudowires>
+</config>

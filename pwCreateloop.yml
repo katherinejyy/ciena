@@ -1,0 +1,12 @@
+---
+- name: "Create L2VPN-VPWS service"
+  hosts: "5170_T2"
+  connection: netconf
+  gather_facts: false
+  tasks:
+      - include_vars: /home/kathy/telesat/var.yml
+      - name: "Create Pseudowires"
+        netconf_config:
+            content: "{{ lookup('template', 'templates/createPw.j2') }}"           
+        ignore_errors: True
+        

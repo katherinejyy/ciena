@@ -1,0 +1,7 @@
+---
+
+ pws:
+       
+       - { pwName: "pw101", peerIp: "10.0.10.251", pwid: "1001",  tlabel: "101", rlabel: "101", tunnelName: "Ingr-0072_to_0075", sourceIp: "10.0.30.251", destinationIp: "10.0.10.251"}     
+       - { pwName: "pw102", peerIp: "10.0.10.251", pwid: "1002",  tlabel: "102", rlabel: "102", tunnelName: "Ingr-0072_to_0075", sourceIp: "10.0.30.251", destinationIp: "10.0.10.251"}
+

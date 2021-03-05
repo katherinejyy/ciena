@@ -1,0 +1,16 @@
+---
+
+- name: "Create L2VPN service"
+  hosts: "5170_T2"
+  vars:
+      - name: "l2vpn-ansible"
+        fd: "FD-Serv100"
+        pseudowire: "svc103"
+  connection: netconf
+  gather_facts: false
+  tasks:
+      - name: "Create L2VPN"
+        netconf_config:
+             content: "{{ lookup('template', 'templates/createL2vpn.j2') }}"           
+        ignore_errors: True
+
