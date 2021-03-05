@@ -2,22 +2,18 @@
 
 - name: "Create L2VPN-VPWS service"
   hosts: "5170_T2"
-  # vars:
-  #    - pwName: "svc103"
-  #      peerIp: "10.0.10.251"
-  #      pwid: "102"
-  #      tlabel: "1001"
-  #      rlabel: "1002"
-  #      tunnelName: "Ingr-0072_to_0075"
-  #      sourceIp: "10.0.30.251"
-  #      destinationIp: "10.0.10.251"
+  vars:
+     - pwName: "svc103"
+       peerIp: "10.0.10.251"
+       pwid: "102"
+       tlabel: "1001"
+       rlabel: "1002"
+       tunnelName: "Ingr-0072_to_0075"
+       sourceIp: "10.0.30.251"
+       destinationIp: "10.0.10.251"
   connection: netconf
   gather_facts: false
   tasks:
-          #   - name: "Create LDP Peer"
-          #netconf_config:
-          #   content: "{{ lookup('template', 'templates/createLdpPeer.j2') }}"           
-          #ignore_errors: True
 
       - name: "Create Pseudowires"
         netconf_config:
