@@ -1,6 +1,6 @@
 ---
 
-- name: Get Flow Domain information
+- name: Get Pseudowire information
   hosts: "5170_T2"
   connection: netconf
   gather_facts: false

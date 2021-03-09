@@ -1,13 +1,15 @@
 <config>
 <l2vpn-services xmlns="http://ciena.com/ns/yang/ciena-l2vpn">
+  {% for l2vpn in l2vpns %}
     <l2vpn>
-      <name>{{ name }}</name>
+      <name>{{ l2vpn.name }}</name>
       <mtu>1500</mtu>
       <service-type>vlan</service-type>
-      <forwarding-domain>{{ fd }}</forwarding-domain>
-      <pseudowire>{{ pseudowire }}</pseudowire>
+      <forwarding-domain>{{ l2vpn.fd }}</forwarding-domain>
+      <pseudowire>{{ l2vpn.pseudowire }}</pseudowire>
       <vc-mode-revertive>false</vc-mode-revertive>
       <control-word>false</control-word>
     </l2vpn>
+   {% endfor %}
  </l2vpn-services>
  </config>

@@ -39,5 +39,49 @@
       <tunnel-source-ip xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">10.0.30.251</tunnel-source-ip>
       <tunnel-destination-ip xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">10.0.10.251</tunnel-destination-ip>
     </pseudowire>
+    <pseudowire>
+      <name>ST-PW-P-weic</name>
+      <mtu>1500</mtu>
+      <cw-negotiation>non-preferred</cw-negotiation>
+      <configured-pw>
+        <peer-ip>10.0.10.251</peer-ip>
+        <pw-id>6000</pw-id>
+        <transmit-label>6001</transmit-label>
+        <receive-label>7001</receive-label>
+        <pw-status xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">false</pw-status>
+        <pw-status-refresh-timer xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">600</pw-status-refresh-timer>
+      </configured-pw>
+      <role xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires" xmlns:cnpw="http://ciena.com/ns/yang/ciena-ietf-pseudowires">cnpw:primary</role>
+      <protect xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">false</protect>
+      <mode xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">mesh</mode>
+      <stats-collection xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">on</stats-collection>
+      <pw-loadbalance xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">disabled</pw-loadbalance>
+      <tunnel-type xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">static-ingress-corouted</tunnel-type>
+      <tunnel-name xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">Ingr-0072_to_0075</tunnel-name>
+      <tunnel-source-ip xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">10.0.30.251</tunnel-source-ip>
+      <tunnel-destination-ip xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">10.0.10.251</tunnel-destination-ip>
+    </pseudowire>
+    <pseudowire>
+      <name>svc103</name>
+      <mtu>1500</mtu>
+      <cw-negotiation>non-preferred</cw-negotiation>
+      <configured-pw>
+        <peer-ip>10.0.10.251</peer-ip>
+        <pw-id>102</pw-id>
+        <transmit-label>1001</transmit-label>
+        <receive-label>1002</receive-label>
+        <pw-status xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">false</pw-status>
+        <pw-status-refresh-timer xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">600</pw-status-refresh-timer>
+      </configured-pw>
+      <role xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires" xmlns:cnpw="http://ciena.com/ns/yang/ciena-ietf-pseudowires">cnpw:primary</role>
+      <protect xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">false</protect>
+      <mode xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">spoke</mode>
+      <stats-collection xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">on</stats-collection>
+      <pw-loadbalance xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">disabled</pw-loadbalance>
+      <tunnel-type xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">static-ingress-corouted</tunnel-type>
+      <tunnel-name xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">Ingr-0072_to_0075</tunnel-name>
+      <tunnel-source-ip xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">10.0.30.251</tunnel-source-ip>
+      <tunnel-destination-ip xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">10.0.10.251</tunnel-destination-ip>
+    </pseudowire>
   </pseudowires>
 </data>
