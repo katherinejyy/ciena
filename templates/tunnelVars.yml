@@ -1,0 +1,5 @@
+---
+
+      {% for idx in range(2001,2010) %} 
+       - { name: "Ingr{{ idx }}-0072_to_0075", folabel: {{ idx }} , rilabel: {{ idx-100 }} }     
+      {% endfor %}

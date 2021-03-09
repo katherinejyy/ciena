@@ -1,0 +1,6 @@
+---
+
+ pws:
+      {% for idx in range(2001,2010) %} 
+       - { pwName: "pw"{{ idx }}, peerIp: "10.0.10.251", pwid: {{ idx }},  tlabel: {{ idx }}, rlabel: {{ idx }}, tunnelName: "Ingr-0072_to_0075", sourceIp: "10.0.30.251", destinationIp: "10.0.10.251"}     
+      {% endfor %}

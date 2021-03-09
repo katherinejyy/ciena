@@ -1,0 +1,11 @@
+<config>
+ <tp-corouted-tunnels xmlns="http://ciena.com/ns/yang/ciena-mpls-tp-corouted">
+  {% for tunnel in tunnels%}
+   <tunnel operation="delete">
+      <name>{{ tunnel.name }}</name>
+      <source-ip>10.0.30.251</source-ip>
+      <destination-ip>10.0.10.251</destination-ip> 
+   </tunnel>
+  {% endfor %}
+ </tp-corouted-tunnels>
+</config>

@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<data xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:ncx="http://netconfcentral.org/ns/yuma-ncx">
+  <tp-corouted-tunnels xmlns="http://ciena.com/ns/yang/ciena-mpls-tp-corouted">
+    <tunnel>
+      <name>Ingr-0072_to_0075</name>
+      <source-ip>10.0.30.251</source-ip>
+      <destination-ip>10.0.10.251</destination-ip>
+      <tunnel-type>static-ingress-corouted</tunnel-type>
+      <forward-out-segment>
+        <next-hop-ip>10.0.32.2</next-hop-ip>
+        <forward-out-label>310</forward-out-label>
+      </forward-out-segment>
+      <reverse-in-segment>
+        <reverse-in-label>110</reverse-in-label>
+      </reverse-in-segment>
+      <tunnel-role-type>primary</tunnel-role-type>
+      <reversion-hold-time>102</reversion-hold-time>
+      <tunnel-admin-state>enable</tunnel-admin-state>
+      <tp-tunnel-stats-collection>on</tp-tunnel-stats-collection>
+      <tunnel-reversion-state>enable</tunnel-reversion-state>
+      <bfd-cfg-parms xmlns="http://ciena.com/ns/yang/ciena-bfd-mpls-tp">
+        <local-multiplier>3</local-multiplier>
+        <desired-min-tx-interval>100000</desired-min-tx-interval>
+        <required-min-rx-interval>100000</required-min-rx-interval>
+        <admin-down>false</admin-down>
+        <encap xmlns:bfd-mpls="http://ciena.com/ns/yang/ciena-bfd-mpls">bfd-mpls:encap-gach</encap>
+        <gach-type>mpls-tp-cc</gach-type>
+      </bfd-cfg-parms>
+    </tunnel>
+    <tunnel>
+      <name>Ingr-0072_to_0075B</name>
+      <source-ip>10.0.30.251</source-ip>
+      <destination-ip>10.0.10.251</destination-ip>
+      <tunnel-type>static-ingress-corouted</tunnel-type>
+      <forward-out-segment>
+        <next-hop-ip>10.0.31.2</next-hop-ip>
+        <forward-out-label>311</forward-out-label>
+      </forward-out-segment>
+      <reverse-in-segment>
+        <reverse-in-label>111</reverse-in-label>
+      </reverse-in-segment>
+      <tunnel-role-type>backup</tunnel-role-type>
+      <primary-tunnel-configuration>
+        <primary-tunnel-name>Ingr-0072_to_0075</primary-tunnel-name>
+        <primary-tunnel-type>static-ingress-corouted</primary-tunnel-type>
+      </primary-tunnel-configuration>
+      <reversion-hold-time>30</reversion-hold-time>
+      <tunnel-admin-state>enable</tunnel-admin-state>
+      <tp-tunnel-stats-collection>off</tp-tunnel-stats-collection>
+      <tunnel-reversion-state>enable</tunnel-reversion-state>
+      <bfd-cfg-parms xmlns="http://ciena.com/ns/yang/ciena-bfd-mpls-tp">
+        <local-multiplier>3</local-multiplier>
+        <desired-min-tx-interval>100000</desired-min-tx-interval>
+        <required-min-rx-interval>100000</required-min-rx-interval>
+        <admin-down>false</admin-down>
+        <encap xmlns:bfd-mpls="http://ciena.com/ns/yang/ciena-bfd-mpls">bfd-mpls:encap-gach</encap>
+        <gach-type>mpls-tp-cc</gach-type>
+      </bfd-cfg-parms>
+    </tunnel>
+  </tp-corouted-tunnels>
+</data>

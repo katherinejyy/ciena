@@ -1,0 +1,5 @@
+---
+
+      {% for idx in range(2001,2010) %} 
+       - { name: "l2vpn-{{ idx }}", fd: "FD-Serv100", pseudowire: "pw{{ idx }}" }     
+      {% endfor %}

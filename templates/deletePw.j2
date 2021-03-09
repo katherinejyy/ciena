@@ -1,0 +1,9 @@
+<config>
+  <pseudowires xmlns="urn:ietf:params:xml:ns:yang:ietf-pseudowires">
+  {% for pw in pws %}
+    <pseudowire operation="delete">
+    <name>{{ pw.pwName }}</name>
+    </pseudowire>
+  {% endfor %}
+  </pseudowires>
+</config>

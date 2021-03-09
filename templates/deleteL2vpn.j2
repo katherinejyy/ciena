@@ -1,0 +1,9 @@
+<config>
+<l2vpn-services xmlns="http://ciena.com/ns/yang/ciena-l2vpn">
+  {% for l2vpn in l2vpns %}
+    <l2vpn operation="delete">
+      <name>{{ l2vpn.name }}</name>
+    </l2vpn>
+   {% endfor %}
+ </l2vpn-services>
+ </config>

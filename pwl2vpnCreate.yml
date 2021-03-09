@@ -1,0 +1,22 @@
+---
+- name: "Create L2VPN-VPWS service"
+  hosts: "5170_T2"
+  connection: netconf
+  gather_facts: false
+  tasks:
+      - name: "Read Variables"
+        set_fact:
+                 pws: "{{ lookup('template', 'templates/pwVars.yml') | from_yaml }}"
+      - name: "Create Pseudowires"
+        netconf_config:
+            content: "{{ lookup('template', 'templates/createPw.j2') }}"           
+        ignore_errors: True
+      - name: "Read Pseudowires Name"
+        set_fact:
+                l2vpns: "{{ lookup('template', 'templates/l2vpnVars.yml') | from_yaml }}"
+      - name: "Create L2VPN"
+        netconf_config:
+            content: "{{ lookup('template', 'templates/createL2vpn.j2') }}"
+        ignore_errors: True
+
+        

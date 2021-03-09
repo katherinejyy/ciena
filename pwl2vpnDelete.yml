@@ -1,0 +1,22 @@
+---
+- name: "Delete L2VPN-VPWS service"
+  hosts: "5170_T2"
+  connection: netconf
+  gather_facts: false
+  tasks:
+      - name: "Read L2VPN Variables"
+        set_fact:
+                 l2vpns: "{{ lookup('template', 'templates/l2vpnVars.yml') | from_yaml }}"
+      - name: "Delete L2VPN"
+        netconf_config:
+            content: "{{ lookup('template', 'templates/deleteL2vpn.j2') }}"           
+        ignore_errors: True
+      - name: "Read Pseudowires Name"
+        set_fact:
+                pws: "{{ lookup('template', 'templates/pwVars.yml') | from_yaml }}"
+      - name: "Delete L2VPN"
+        netconf_config:
+            content: "{{ lookup('template', 'templates/deletePw.j2') }}"
+        ignore_errors: True
+
+        
