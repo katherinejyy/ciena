@@ -1,0 +1,38 @@
+<config>
+  {% for md in mds %}
+  <maintenance-domain xmlns="http://metroethernetforum.org/ns/yang/mef-cfm">
+   <id>{{ md.id }}</id>
+    <name-type>character-string</name-type>
+    <name>{{ md.name }}</name>
+    <mhf-creation>none</mhf-creation>
+    <id-permission>chassis</id-permission>
+    <maintenance-association>
+      <id>{{ md.maid }}</id>
+      <name-type>character-string</name-type>
+      <name>upmep</name>
+      <component-list>
+        <component-id>1</component-id>
+        <mhf-creation>none</mhf-creation>
+        <id-permission>chassis</id-permission>
+        <fd-name xmlns="urn:ciena:params:xml:ns:yang:ciena-pn:ciena-cfm">{{ md.fd }}</fd-name>
+      </component-list>
+      <ccm-interval>1s</ccm-interval>
+      <maintenance-association-end-point>
+        <mep-identifier>{{ md.mepid }}</mep-identifier>
+        <interface>{{ md.fp }}</interface>
+        <direction>up</direction>
+        <administrative-state>true</administrative-state>
+        <ccm-ltm-priority>1</ccm-ltm-priority>
+        <continuity-check>
+          <cci-enabled>true</cci-enabled>
+        </continuity-check>
+        <l2-transform xmlns="urn:ciena:params:xml:ns:yang:ciena-pn:ciena-cfm">
+          <tpid>tpid-8100</tpid>
+          <pcp>pcp-7</pcp>
+          <vlanid>{{ md.vlan }}</vlanid>
+        </l2-transform>
+      </maintenance-association-end-point>
+    </maintenance-association>
+  </maintenance-domain>
+  {% endfor %}
+</config>

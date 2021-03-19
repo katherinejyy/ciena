@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<data xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:ncx="http://netconfcentral.org/ns/yuma-ncx">
+  <fds xmlns="urn:ciena:params:xml:ns:yang:ciena-pn:ciena-mef-fd">
+    <fd>
+      <name>remote-fd</name>
+      <mode>vpls</mode>
+      <pfg-profile>default-pfg-profile</pfg-profile>
+      <initiate-l2-transform>
+        <vlan-stack>
+          <tag>1</tag>
+          <push-tpid>tpid-8100</push-tpid>
+          <push-pcp>map</push-pcp>
+          <push-vid>127</push-vid>
+        </vlan-stack>
+      </initiate-l2-transform>
+    </fd>
+    <fd>
+      <name>FD-to0073-P2</name>
+      <mode>vpls</mode>
+    </fd>
+    <fd>
+      <name>FD-to0075-P3</name>
+      <mode>vpls</mode>
+    </fd>
+    <fd>
+      <name>FD-Serv100</name>
+      <mode>vpws</mode>
+    </fd>
+    <fd>
+      <name>weic</name>
+      <mode>vpls</mode>
+    </fd>
+  </fds>
+</data>

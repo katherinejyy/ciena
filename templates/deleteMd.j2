@@ -1,0 +1,7 @@
+<config>
+  {% for md in mds %}
+  <maintenance-domain xmlns="http://metroethernetforum.org/ns/yang/mef-cfm" operation="delete">
+   <id>{{ md.id }}</id>
+  </maintenance-domain>
+  {% endfor %}
+</config>

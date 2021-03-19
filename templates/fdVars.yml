@@ -1,0 +1,5 @@
+---
+
+      {% for idx in range(2001,2010) %} 
+       - { fdname: "FD-Serv{{ idx }}", mode: "vpws" }     
+      {% endfor %}

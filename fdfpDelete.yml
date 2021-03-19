@@ -1,0 +1,22 @@
+---
+- name: "Create Forwarding Domain and Flow Point"
+  hosts: "5170_T2"
+  connection: netconf
+  gather_facts: false
+  tasks:
+      - name: "Read FD Variables"
+        set_fact:
+                 fds: "{{ lookup('template', 'templates/fdVars.yml') | from_yaml }}"
+      - name: "Delete FD"
+        netconf_config:
+            content: "{{ lookup('template', 'templates/deleteFd.j2') }}"           
+        ignore_errors: True
+        # - name: "Read FP Name"
+        #set_fact:
+        #       fps: "{{ lookup('template', 'templates/fpVars.yml') | from_yaml }}"
+        # - name: "Create L2VPN"
+        #netconf_config:
+        #    content: "{{ lookup('template', 'templates/createFp.j2') }}"
+        #ignore_errors: True
+
+        

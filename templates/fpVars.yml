@@ -1,0 +1,5 @@
+---
+
+      {% for idx in range(2001,2010) %} 
+       - { fpname: "FP-{{ idx }}", fdname: "FD-Serv{{ idx }}", egressname: "VLAN{{ idx }}", pushvid: "{{idx}}", classifier: "VLAN{{ idx }}" }     
+      {% endfor %}

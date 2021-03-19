@@ -1,0 +1,9 @@
+<config>
+  <fds xmlns="urn:ciena:params:xml:ns:yang:ciena-pn:ciena-mef-fd">
+    {% for fd in fds %}
+    <fd operation="delete">
+      <name>{{ fd.fdname }}</name>
+    </fd>
+     {% endfor %}
+  </fds>
+</config>

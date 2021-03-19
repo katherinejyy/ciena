@@ -1,0 +1,24 @@
+<config>
+ <fps xmlns="urn:ciena:params:xml:ns:yang:ciena-pn:ciena-mef-fp">    
+   {% for fp in fps %}
+    <fp>
+      <name>{{ fp.fpname }}</name>
+      <fd-name>{{ fp.fdname }}</fd-name>
+      <logical-port>2</logical-port>
+      <mtu-size>2000</mtu-size>
+      <egress-l2-transform>
+        <egress-name>{{ fp.egressname }}</egress-name>
+        <vlan-stack>
+          <tag>1</tag>
+          <push-tpid>tpid-8100</push-tpid>
+          <push-pcp>pcp-0</push-pcp>
+          <push-vid>{{ fp.pushvid }}</push-vid>
+        </vlan-stack>
+      </egress-l2-transform>
+      <frame-to-cos-map>default-f2c</frame-to-cos-map>
+      <cos-to-frame-map>default-c2f</cos-to-frame-map>
+      <classifier-list>{{ fp.classifier}}</classifier-list>
+    </fp>
+     {% endfor %}
+  </fps>
+</config>

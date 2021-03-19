@@ -1,0 +1,14 @@
+---
+- name: "Create Tagged Classifiers"
+  hosts: "5170_T5"
+  vars:  
+        createUntaggedClassifier: true 
+  connection: netconf
+  gather_facts: false
+  tasks:
+      - name: "Create Classifiers"
+        netconf_config:
+            content: "{{ lookup('template', 'templates/createClassifier.j2') }}"           
+        ignore_errors: True
+
+        

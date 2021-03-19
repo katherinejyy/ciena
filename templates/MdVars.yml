@@ -1,0 +1,5 @@
+---
+
+      {% for idx in range(2001,2010) %} 
+       - { id: "md{{ idx }}", name: "md{{ idx }}", maid: "ma{{ idx }}", fd: "FD-Serv{{ idx }}", mepid: "{{idx+1000}}", fp: "FP-{{ idx }}", vlan: "{{ idx }}" }     
+      {% endfor %}

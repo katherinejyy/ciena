@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<data xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:ncx="http://netconfcentral.org/ns/yuma-ncx">
+  <fps xmlns="urn:ciena:params:xml:ns:yang:ciena-pn:ciena-mef-fp">
+    <fp>
+      <name>fp-2</name>
+      <fd-name>FD-to0073-P2</fd-name>
+      <logical-port>2</logical-port>
+      <mtu-size>2000</mtu-size>
+      <egress-l2-transform>
+        <egress-name>VLAN100</egress-name>
+        <vlan-stack>
+          <tag>1</tag>
+          <push-tpid>tpid-8100</push-tpid>
+          <push-pcp>pcp-0</push-pcp>
+          <push-vid>100</push-vid>
+        </vlan-stack>
+      </egress-l2-transform>
+      <frame-to-cos-map>default-f2c</frame-to-cos-map>
+      <cos-to-frame-map>default-c2f</cos-to-frame-map>
+      <classifier-list>VLAN100</classifier-list>
+    </fp>
+    <fp>
+      <name>fp-3</name>
+      <fd-name>FD-to0075-P3</fd-name>
+      <logical-port>3</logical-port>
+      <mtu-size>2000</mtu-size>
+      <egress-l2-transform>
+        <egress-name>VLAN100</egress-name>
+        <vlan-stack>
+          <tag>1</tag>
+          <push-tpid>tpid-8100</push-tpid>
+          <push-pcp>pcp-0</push-pcp>
+          <push-vid>100</push-vid>
+        </vlan-stack>
+      </egress-l2-transform>
+      <frame-to-cos-map>default-f2c</frame-to-cos-map>
+      <cos-to-frame-map>default-c2f</cos-to-frame-map>
+      <classifier-list>VLAN100</classifier-list>
+    </fp>
+    <fp>
+      <name>fp-serv100</name>
+      <fd-name>FD-Serv100</fd-name>
+      <logical-port>1</logical-port>
+      <mtu-size>2000</mtu-size>
+      <classifier-list>VLAN100</classifier-list>
+    </fp>
+  </fps>
+</data>

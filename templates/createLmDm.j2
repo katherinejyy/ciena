@@ -1,0 +1,40 @@
+<config>
+  {% for md in mds %}
+  <maintenance-domain xmlns="http://metroethernetforum.org/ns/yang/mef-cfm">
+   <id>{{ md.id }}</id>
+    <maintenance-association>
+      <id>{{ md.maid }}</id>
+      <maintenance-association-end-point>
+        <mep-identifier>{{ md.mepid }}</mep-identifier>
+         <loss-measurements xmlns="http://metroethernetforum.org/ns/yang/mef-soam-pm">
+          <loss-measurement-config xmlns="http://www.ciena.com/ns/yang/ciena-soam-pm">
+            <session-id>{{ md.lmid }}</session-id>
+            <operation-type>create</operation-type>
+            <remote-mep-id>{{ md.lmremoteid }}</remote-mep-id>
+            <measurement-type>slm</measurement-type>
+            <message-period>100</message-period>
+            <priority>7</priority>
+            <measurement-interval>2</measurement-interval>
+            <repetition-period>12000</repetition-period>
+            <start-time-type>immediate</start-time-type>
+            <stop-time-type>none</stop-time-type>
+          </loss-measurement-config>
+        </loss-measurements>
+        <delay-measurements xmlns="http://metroethernetforum.org/ns/yang/mef-soam-pm">
+          <delay-measurement-config xmlns="http://www.ciena.com/ns/yang/ciena-soam-pm">
+            <session-id>{{ md.dmid }}</session-id>
+            <operation-type>create</operation-type>
+            <remote-mep-id>{{ md.dmremoteid }}</remote-mep-id>
+            <message-period>100</message-period>
+            <priority>7</priority>
+            <measurement-interval>1</measurement-interval>
+            <repetition-period>6000</repetition-period>
+            <start-time-type>immediate</start-time-type>
+            <stop-time-type>none</stop-time-type>
+          </delay-measurement-config>
+        </delay-measurements>
+      </maintenance-association-end-point>
+    </maintenance-association>
+  </maintenance-domain>
+  {% endfor %}
+</config>

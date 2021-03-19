@@ -1,0 +1,25 @@
+<config>
+  {% for md in mds %}
+  <maintenance-domain xmlns="http://metroethernetforum.org/ns/yang/mef-cfm">
+   <id>{{ md.id }}</id>
+    <maintenance-association>
+      <id>{{ md.maid }}</id>
+      <maintenance-association-end-point>
+        <mep-identifier>{{ md.mepid }}</mep-identifier>
+         <loss-measurements xmlns="http://metroethernetforum.org/ns/yang/mef-soam-pm">
+          <loss-measurement-config xmlns="http://www.ciena.com/ns/yang/ciena-soam-pm">
+            <session-id>{{ md.lmid }}</session-id>
+            <operation-type>abort</operation-type>
+          </loss-measurement-config>
+        </loss-measurements>
+        <delay-measurements xmlns="http://metroethernetforum.org/ns/yang/mef-soam-pm">
+          <delay-measurement-config xmlns="http://www.ciena.com/ns/yang/ciena-soam-pm">
+            <session-id>{{ md.dmid }}</session-id>
+            <operation-type>abort</operation-type>
+          </delay-measurement-config>
+        </delay-measurements>
+      </maintenance-association-end-point>
+    </maintenance-association>
+  </maintenance-domain>
+  {% endfor %}
+</config>
