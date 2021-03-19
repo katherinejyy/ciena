@@ -16,7 +16,7 @@
       <mode xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">spoke</mode>
       <stats-collection xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">on</stats-collection>
       <pw-loadbalance xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">disabled</pw-loadbalance>
-      <tunnel-type xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">static-ingress-corouted</tunnel-type>
+      <tunnel-type xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">{{ pw.tunneltype }}</tunnel-type>
       <tunnel-name xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">{{ pw.tunnelName }}</tunnel-name>
       <tunnel-source-ip xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">{{ pw.sourceIp }}</tunnel-source-ip>
       <tunnel-destination-ip xmlns="http://ciena.com/ns/yang/ciena-ietf-pseudowires">{{ pw.destinationIp }}</tunnel-destination-ip>
