@@ -1,12 +1,12 @@
 ---
 - name: "Delete Maintenance Domain"
-  hosts: "5170_T2"
+  hosts: "5170_T5"
   connection: netconf
   gather_facts: false
   tasks:
       - name: "Read MD Variables"
         set_fact:
-                 mds: "{{ lookup('template', 'templates/MdVars.yml') | from_yaml }}"
+                 mas: "{{ lookup('template', 'templates/MdVars.yml') | from_yaml }}"
       - name: "Delete MD"
         netconf_config:
             content: "{{ lookup('template', 'templates/deleteMd.j2') }}"           

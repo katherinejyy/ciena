@@ -6,7 +6,7 @@
   tasks:
       - name: "Read MD Variables"
         set_fact:
-                 mds: "{{ lookup('template', 'templates/MdVars.yml') | from_yaml }}"
+                 mas: "{{ lookup('template', 'templates/MdVars.yml') | from_yaml }}"
       - name: "Create MD"
         netconf_config:
             content: "{{ lookup('template', 'templates/createMd.j2') }}"           
