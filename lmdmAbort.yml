@@ -6,7 +6,7 @@
   tasks:
       - name: "Read Variables"
         set_fact:
-                 mds: "{{ lookup('template', 'templates/LmDmVars.yml') | from_yaml }}"
+                 mas: "{{ lookup('template', 'templates/LmDmVars.yml') | from_yaml }}"
       - name: "Abort LMM and DMM"
         netconf_config:
             content: "{{ lookup('template', 'templates/abortLmDm.j2') }}"           
