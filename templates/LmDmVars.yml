@@ -1,5 +1,5 @@
 ---
 
       {% for idx in range(2001,2010) %} 
-       - { maid: "ma{{ idx }}", mepid: "{{idx}}", lmid: "{{idx}}", lmremoteid: "{{ idx+1000 }}", dmid: "{{idx}}", dmremoteid: "{{ idx+1000 }}" }     
+       - { maid: "ma{{ idx }}", mepid: "{{idx+1000}}", lmid: "{{idx}}", lmremoteid: "{{ idx-1000 }}", dmid: "{{idx}}", dmremoteid: "{{ idx-1000 }}" }     
       {% endfor %}
