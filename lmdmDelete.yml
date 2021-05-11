@@ -9,7 +9,7 @@
                  mas: "{{ lookup('template', 'templates/LmDmVars.yml') | from_yaml }}"
       - name: "Create LMM and DMM"
         netconf_config:
-            content: "{{ lookup('template', 'templates/createLmDm.j2') }}"           
+            content: "{{ lookup('template', 'templates/deleteLmDm.j2') }}"           
         ignore_errors: True
 
         

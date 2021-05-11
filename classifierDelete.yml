@@ -1,6 +1,6 @@
 ---
 - name: "Create Tagged Classifiers"
-  hosts: "5170_T2"
+  hosts: "5170_T5"
   vars:  
         createUntaggedClassifier: true 
   connection: netconf
